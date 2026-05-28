@@ -1,0 +1,599 @@
+/* Imposta altezza della pagina per occupare l'intero schermo */
+html, body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: flex;
+  overflow-x: hidden;
+}
+
+/* Layout principale con sidebar fissa */
+.container-fluid {
+  display: flex;
+  width: 100%;
+  background-color: #fbf0d7;
+}
+
+/* Sidebar moderna */
+.sidebar {
+  background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
+  color: white;
+  padding: 1.5rem;
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+/* Titolo della sidebar */
+.sidebar h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Stili per i link della sidebar */
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Effetto hover */
+.sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+/* Contenuto principale */
+.main-content {
+  flex-grow: 1;
+  margin-left: 270px;
+  padding: 20px;
+  max-width: 1000px;
+  margin-right: auto;
+  text-align: center;
+  background-color: #fbf0d7;
+  transition: margin-left 0.3s ease;
+  margin-bottom: 40px;
+}
+
+/* Header */
+header {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Timeline Orizzontale */
+.timeline-container {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#timeline-wrapper {
+  width: 70%;
+  overflow: hidden;
+}
+
+.timeline-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom:50px;
+}
+
+.timeline-content {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Stili per le card della timeline */
+#timeline .card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background: #fff;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Effetto hover sulle card */
+#timeline .card:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 15px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+/* Uniforma le immagini */
+#timeline .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Stili per le frecce */
+button#prevBtn, button#nextBtn {
+  background: #ffffff;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button#prevBtn:hover, button#nextBtn:hover {
+  background: #ffd700;
+  transform: scale(1.1);
+}
+
+/* 📌 Responsive: ridimensioniamo le frecce su schermi piccoli */
+@media (max-width: 768px) {
+  .timeline-navigation {
+    gap: 10px;
+  }
+
+  button#prevBtn, button#nextBtn {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  button#prevBtn, button#nextBtn {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
+  color: white;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+/* Contenitore descrizione */
+.descrizione-container {
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titolo della sezione */
+.descrizione-container h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Testo della descrizione */
+.descrizione-container p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Sezione statistiche sui videogiochi */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  background: #007bff;
+  color: white;
+  padding: 30px 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.stat {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Sezione citazione famosa */
+.quote-container {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #555;
+  padding: 20px;
+  margin: 30px 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 Media Query per schermi medi (tablet) */
+@media (max-width: 992px) {
+  .sidebar {
+      width: 200px;
+  }
+  .main-content {
+      margin-left: 220px;
+      max-width: calc(100% - 220px);
+  }
+}
+
+/* 📌 Media Query per schermi piccoli (mobile) */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 180px;
+      padding: 1rem;
+  }
+  .sidebar h2 {
+      font-size: 1.2rem;
+  }
+  .sidebar .nav-link {
+      font-size: 0.80rem;
+      padding: 10px;
+  }
+  .main-content {
+    margin-left: 0 !important;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+    margin-right: 0;
+    text-align: center;
+  }
+  .stats-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .quote-container {
+      font-size: 1rem;
+      padding: 15px;
+  }
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1500;
+  }
+
+  .sidebar.open {
+      left: 0;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .timeline-navigation {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .timeline-content {
+    justify-content: center;
+  }
+}
+
+/* 📌 Media Query per schermi xs */
+@media (max-width: 576px) {
+  .sidebar {
+      width: 150px;
+      padding: 0.8rem;
+  }
+  .main-content {
+    margin-left: 0 !important;
+    max-width: 100%;
+    width: 100%;
+    padding: 15px;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.contact-section {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #555;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 0;          /* spazio interno sopra e sotto */
+  margin-top: 40px;         /* per separare dalla sezione precedente (timeline) */
+}
+
+.stats-graph-container {
+  max-width: 600px;
+  margin: 0 auto; /* per centrarlo */
+  background: #ffffff; 
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px; 
+}
+
+/*Stile di base per il pulsante hamburger */
+.hamburger-btn {
+  display: none; /* di default nascosto su schermi grandi */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2000; /* per stare sopra la sidebar */
+}
+
+/* Barre orizzontali dell'hamburger */
+.hamburger-btn .bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 6px 0;
+  background-color: #ffd700;
+  transition: 0.4s;
+}
+
+/* Quando la sidebar è "chiusa" su mobile viene posizionata fuori dallo schermo */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed; 
+    left: -250px; /* la spostiamo fuori schermo */
+    top: 0;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1500; 
+  }
+
+  /* Quando la sidebar ha la classe .open, la riportiamo in vista */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* La main-content deve occupare tutto lo spazio quando la sidebar è chiusa */
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  /* Mostra l'hamburger button su mobile */
+  .hamburger-btn {
+    display: block; 
+  }
+}
+
+/* --- RARE SOFT POP / CLEAN SKINCARE STYLE --- */
+
+/* Soft, natural colors */
+.bg-mint { background-color: #E2F0CB; color: #2D3436; }
+.bg-peach { background-color: #FFB7B2; color: #2D3436; }
+.bg-cream { background-color: #FDFBF7; color: #2D3436; border: 1px solid #EAEAEA; }
+.bg-white { background-color: #ffffff; color: #2D3436; }
+
+/* Base Soft Container */
+.rare-box {
+    border-radius: 24px; /* Angoli molto morbidi */
+    margin-bottom: 40px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Ombra leggerissima ed elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rare-box:hover {
+    transform: translateY(-5px); /* Leggero effetto galleggiamento */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Typography */
+.rare-header {
+    margin-bottom: 2rem;
+}
+
+.rare-title {
+    font-weight: 700;
+    font-size: 3rem;
+    color: #FF6B6B; /* Un rosso pomodoro ma morbido/corallo */
+    letter-spacing: 1px;
+}
+
+.rare-heading {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2D3436;
+}
+
+.rare-number {
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: #FF6B6B;
+    margin-bottom: 0;
+}
+
+.rare-author {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #FF6B6B;
+}
+
+/* Forms & Inputs */
+.rare-input {
+    border: 2px solid #EAEAEA !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    font-size: 1.1rem;
+    background-color: #FAFAFA;
+    transition: all 0.2s ease;
+}
+
+.rare-input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.15) !important;
+    outline: none;
+    border-color: #FF6B6B !important;
+    background-color: #fff;
+}
+
+/* Call to Action Button */
+.rare-btn {
+    background-color: #FF6B6B !important; /* Tomato accent color */
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: none !important;
+    border-radius: 50px !important; /* Forma a pillola */
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+.rare-btn:hover, .rare-btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(255, 107, 107, 0.4) !important;
+    background-color: #FF5252 !important; /* Leggermente più scuro al passaggio del mouse */
+}
+
+.font-bold { font-weight: 600; }
+/* --- END RARE SOFT STYLE --- */
+
+/* --- REGISTRAZIONE NUOVO STILE SIDEBAR & FOOTER RARE --- */
+
+/* Sovrascriviamo la sidebar con colori chiari e morbidi */
+.sidebar {
+  background: #FAF9F6 !important; /* Colore crema/off-white pulito */
+  color: #2D3436 !important;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid #EAEAEA; /* Sottile linea di separazione anziché stacco netto */
+}
+
+/* Titolo RARE nella sidebar */
+.sidebar h2.sidebar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #FF6B6B; /* Rosso corallo/pomodoro */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Link della sidebar */
+.sidebar .nav-link {
+  color: #555555 !important;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 12px 15px;
+  border-radius: 12px; /* Angoli smussati in linea col nuovo stile */
+  margin-bottom: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Link attivo e Hover */
+.sidebar .nav-link:hover {
+  background: #E2F0CB !important; /* Sfondo verde menta chiarissimo al passaggio */
+  color: #2D3436 !important;
+  transform: translateX(3px);
+}
+
+.sidebar .nav-link.active {
+  background: #FFB7B2 !important; /* Sfondo color pesca per la sezione attiva */
+  color: #2D3436 !important;
+  font-weight: 600;
+}
+
+/* Hamburger button per mobile - sistemiamo il colore delle barrette */
+.hamburger-btn .bar {
+  background-color: #FF6B6B !important; /* Barrette corallo invece che gialle */
+}
+
+/* Sovrascriviamo il Footer */
+footer {
+  background: #FAF9F6 !important;
+  color: #777777 !important;
+  border-top: 1px solid #EAEAEA;
+  padding: 15px;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+footer a {
+  color: #FF6B6B !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- FINE STILE SIDEBAR & FOOTER --- */
+
+/* --- PROCESS IMAGE PLACEHOLDERS --- */
+.process-image-placeholder {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border: 2px dashed #FF6B6B;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: #FF6B6B;
+    font-weight: 500;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.process-image-placeholder.dark-placeholder {
+    background-color: rgba(45, 52, 54, 0.05);
+    border: 2px dashed #2D3436;
+    color: #2D3436;
+}
+
+@media (max-width: 768px) {
+    .process-image-placeholder {
+        width: 100%;
+        height: 200px;
+    }
+}

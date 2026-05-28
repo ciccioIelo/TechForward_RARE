@@ -1,0 +1,342 @@
+/* Stile generale */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenitore principale */
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 750px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Titolo del gioco */
+h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+/* Anno del gioco */
+.game-year {
+    font-size: 1.4rem;
+    color: #d1d1d1;
+    margin-bottom: 15px;
+}
+
+/* Immagine del gioco */
+.game-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.game-image:hover {
+    transform: scale(1.05);
+}
+
+/* Informazioni sul gioco */
+.game-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.1);
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* Video */
+.game-video {
+    margin-top: 20px;
+}
+
+.game-video h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+/* Stile per il video */
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 340px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenitore per i pulsanti di navigazione */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Bottone Torna alla Home */
+.back-button, .catalog-button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Stile per il pulsante Home */
+.back-button {
+    background: #007bff;
+    color: white;
+}
+
+.back-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Stile per il pulsante Catalogo */
+.catalog-button {
+    background: #007bff;
+    color: white;
+}
+
+.catalog-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Bottone Visualizza Commenti */
+.comment-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #6c757d;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.comment-button:hover {
+    background: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Sezione Commenti */
+.comment-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+/* Input commento */
+.comment-input {
+    width: 90%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.comment-input::placeholder {
+    color: #d1d1d1;
+}
+
+/* Bottone Aggiungi Commento */
+.add-comment-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-comment-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Contenitore dei commenti */
+#comments-container {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 5px rgba(255, 255, 255, 0.1);
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Singolo commento */
+.comment {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Nome dell'autore */
+.comment-author {
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Contenitore delle reazioni */
+.reaction-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+/* Pulsanti reazione */
+.reaction-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    color: white;
+}
+
+.reaction-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    .game-year {
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .game-year {
+        font-size: 1.1rem;
+    }
+
+    iframe {
+        height: 250px;
+    }
+}
+
+.game-stats {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.game-stats h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.game-stats p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #2a2a2a, #3e3e3e);
+    color: white;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Bottone Torna su */
+.back-to-top {
+    position: fixed;         
+    bottom: 20px;          
+    right: 20px;            
+    
+    /* Dimensioni e aspetto circolare */
+    width: 50px;            
+    height: 50px;           
+    border-radius: 50%;     
+    line-height: 50px;      /* per centrare verticalmente il simbolo */
+    text-align: center;    
+    
+    /* Colore di sfondo e trasparenza */
+    background-color: rgba(255, 193, 7, 0.8);;
+    color: #fff;
+    
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    z-index: 9999;          /* per stare sopra altri elementi */
+    
+    /* Effetto di transizione sul background */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover: colore più intenso e leggera espansione */
+  .back-to-top:hover {
+    background-color: rgba(255, 193, 7, 1);
+    transform: scale(1.05);
+  }
